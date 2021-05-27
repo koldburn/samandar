@@ -8,5 +8,11 @@ pipeline {
       }
     }
 
+    stage('shell_stage') {
+      steps {
+        sh 'pwd'
+      }
+    }
+
   }
 }
