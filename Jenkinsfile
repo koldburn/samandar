@@ -16,9 +16,7 @@ pipeline {
 
     stage('folder_shell') {
       steps {
-        sh '''chmod +x ./jenkins/build.sh
-./jenkins/build.sh
-'''
+        echo 'stop'
       }
     }
 
