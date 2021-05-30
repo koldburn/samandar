@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        archiveArtifacts(artifacts: 'java/*.class', fingerprint: true)
+      }
+    }
+
   }
 }
