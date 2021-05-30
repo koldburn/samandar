@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('first_stage') {
       steps {
-        echo 'hello neo'
+        sh '''chmod +c ./java/build.sh
+./java/build.sh'''
       }
     }
 
