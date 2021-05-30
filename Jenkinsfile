@@ -7,9 +7,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('archiveArtifacts') {
       steps {
-        archiveArtifacts(artifacts: 'java/*.class', fingerprint: true)
+        archiveArtifacts(artifacts: 'samandar/java/*.class', fingerprint: true)
       }
     }
 
