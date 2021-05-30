@@ -14,9 +14,8 @@ echo \'hello batsy\' > joker.txt'''
       }
     }
 
-    stage('unstash_file') {
+    stage('o/p') {
       steps {
-        unstash 'bat_stash'
         sh 'cat bat.txt'
       }
     }
