@@ -2,9 +2,20 @@ pipeline {
   agent any
   stages {
     stage('file_create') {
-      steps {
-        sh '''echo \'i am batman\' > bat.txt
+      parallel {
+        stage('file_create') {
+          steps {
+            sh '''echo \'i am batman\' > bat.txt
 echo \'hello batsy\' > joker.txt'''
+          }
+        }
+
+        stage('o/p3') {
+          steps {
+            sh 'cat joker.txt'
+          }
+        }
+
       }
     }
 
