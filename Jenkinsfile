@@ -8,11 +8,5 @@ pipeline {
       }
     }
 
-    stage('archiveArtifacts') {
-      steps {
-        archiveArtifacts(artifacts: 'java/*.class', fingerprint: true)
-      }
-    }
-
   }
 }
