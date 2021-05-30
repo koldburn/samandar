@@ -1,24 +1,23 @@
 pipeline {
   agent any
   stages {
-    stage('first_stage') {
+    stage('file_create') {
       steps {
-        echo 'hello neo'
-        echo 'yes'
+        sh '''echo \'i am batman\' > bat.txt
+echo \'hello batsy\' > joker.txt'''
       }
     }
 
-    stage('shell_stage') {
+    stage('stash_file') {
       steps {
-        sh 'pwd'
+        stash(name: 'bat_stash', includes: 'bat.txt')
       }
     }
 
-    stage('folder_shell') {
+    stage('unstash_file') {
       steps {
-        sh '''chmod +x ./jenkins/build.sh
-./jenkins/build.sh
-'''
+        unstash 'bat_stash'
+        sh 'cat bat.txt'
       }
     }
 
