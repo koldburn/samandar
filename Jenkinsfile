@@ -15,8 +15,19 @@ echo \'hello batsy\' > joker.txt'''
     }
 
     stage('o/p') {
-      steps {
-        sh 'cat bat.txt'
+      parallel {
+        stage('o/p') {
+          steps {
+            sh 'cat bat.txt'
+          }
+        }
+
+        stage('o/p2') {
+          steps {
+            sh 'cat bat.txt'
+          }
+        }
+
       }
     }
 
